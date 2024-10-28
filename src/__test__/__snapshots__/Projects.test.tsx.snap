@@ -1,0 +1,34 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Projects Component tests renders learn react link 1`] = `
+<div>
+  <p>
+    Loading...
+  </p>
+</div>
+`;
+
+exports[`Projects Component tests renders top project list 1`] = `
+<div>
+  <ul>
+    <li>
+      Some JS stuff
+       | 
+      1000000
+       Stars
+    </li>
+    <li>
+      Make docs for JS
+       | 
+      900000
+       Stars
+    </li>
+    <li>
+      Some othre description
+       | 
+      20000
+       Stars
+    </li>
+  </ul>
+</div>
+`;
