@@ -49,7 +49,7 @@ const Register = (props) => {
         auth.name.length < 6 && alert("username needs to be greater than 6 characters")
         auth.password.length < 6 && alert("password needs to be greater than 6 characters")
     }
-    console.info(globalState?.user.role)
+    console.info(globalState?.user.roles)
     return (
         <Box>
             {/* <Typography variant="h4" align="center" margin="dense">
