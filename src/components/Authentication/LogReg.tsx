@@ -106,7 +106,7 @@ const LogReg = () => {
             <CustomTabPanel value={value} index={1}>
                 <Box>
                     <Register />
-                    {globalState?.user.role !== "subscriber" && (
+                    {globalState?.user?.roles.includes("subscriber") && (
                         // <Button
                         //     /* eslint-disable-next-line */
                         //     variant={"egg" as any}

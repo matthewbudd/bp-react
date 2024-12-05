@@ -3,15 +3,18 @@ import type {RootState} from "../../app/store"
 import nav from "../../../data/nav.json"
 import info from "../../../data/info.json"
 
+type Positions = {
+    [key: string]: string | number
+}
 // Define a type for the slice state
 interface GlobalState {
     title?: string
     jwt?: string | undefined
-    user?: {name: string | undefined; role: string | undefined}
+    user?: {name: string | undefined; roles: string[] | null}
     nav?: object
     width?: number
     height?: number
-    navPos?: {left: string | number; right: string | number; top: string | number; bottom: string | number}
+    navPos?: Positions
     top?: string | number
     left?: string | number
     right?: string | number
@@ -21,7 +24,7 @@ interface GlobalState {
 const initialState: GlobalState = {
     title: info.title,
     jwt: undefined,
-    user: {name: undefined, role: undefined},
+    user: {name: undefined, roles: [""]},
     nav,
     width: (typeof window !== "undefined" && window?.innerWidth) || 0,
     height: (typeof window !== "undefined" && window?.innerHeight) || 0,

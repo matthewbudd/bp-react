@@ -20,7 +20,7 @@ const RouteComponent: React.FC = () => {
                 dispatch(
                     loadGlobal({
                         jwt: undefined,
-                        user: {name: undefined, role: undefined},
+                        user: {name: undefined, roles: [""]},
                     }),
                 )
                 navigate("/")
@@ -58,7 +58,7 @@ const RouteComponent: React.FC = () => {
                             jwt: currUser.token,
                             user: {
                                 name: currUser.user.name,
-                                role: currUser.user.role,
+                                roles: currUser.user.roles,
                             },
                         }),
                     )

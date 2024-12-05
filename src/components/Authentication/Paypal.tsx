@@ -117,7 +117,7 @@ export default function Paypal(props) {
                                     jwt: user.token,
                                     user: {
                                         name: user.user.name,
-                                        role: user.user.role,
+                                        roles: user.user.roles,
                                     },
                                 }),
                             )

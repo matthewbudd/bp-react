@@ -28,10 +28,10 @@ const LogRegSub = () => {
     const handleClose = () => setOpen(false)
 
     useEffect(() => {
-        if (globalState?.user?.role == "subscriber") {
+        if (globalState?.user?.roles?.includes("subscriber")) {
             setOpen(false)
         }
-    }, [globalState?.user?.role])
+    }, [globalState?.user?.roles])
 
     return (
         <>
@@ -45,9 +45,9 @@ const LogRegSub = () => {
                 }}
             >
                 {/* <LogoutIcon /> */}
-                {globalState?.user?.role === undefined ? (
+                {globalState?.user?.roles === null || globalState?.user?.roles.includes("") ? (
                     <LoginIcon />
-                ) : ["subscriber"].includes(globalState?.user?.role) ? (
+                ) : globalState?.user?.roles?.includes("subscriber") ? (
                     <LogoutIcon />
                 ) : (
                     <LockOpenIcon />
@@ -60,9 +60,11 @@ const LogRegSub = () => {
                 aria-describedby="modal-modal-description"
             >
                 <Box sx={style}>
-                    {["subscriber", undefined].includes(globalState?.user?.role) ? (
+                   
+                {globalState?.user?.roles &&
+                    globalState?.user?.roles.some((item) => ["subscriber", ""].includes(item)) ? (
                         <>
-                            {globalState?.user?.role === "subscriber" && (
+                            {globalState?.user?.roles.includes("subscriber") && (
                                 <Box>
                                     <Link to="/logout">Logout</Link>
                                     <Box>or</Box>

@@ -40,7 +40,7 @@ export function user(token) {
 export function logOut(navigate) {
     localStorage.removeItem("x-access-token")
     console.info("logged out")
-    // dispatch(loadGlobal({ jwt: undefined, user: { name: undefined, role: undefined } }))
+    // dispatch(loadGlobal({ jwt: undefined, user: { name: undefined, roles: [""] } }))
     // window.location = route
     navigate("/")
 }
@@ -69,7 +69,7 @@ const Login = (props) => {
                             jwt: currUser?.token,
                             user: {
                                 name: currUser?.user?.name,
-                                role: currUser?.user?.role,
+                                roles: currUser?.user?.roles,
                             },
                         }),
                     )
